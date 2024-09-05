@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/dylan/python/d20_dice/dice_roller.py
 
 import random
 
@@ -37,8 +37,9 @@ def roll20():
     print(f"{reset_color}\nTotal of both dice: {total}")
 
 def display_die(Rn, color):
-    if Rn > 9:
-        print(f"""{color}
+    # Format the number to always occupy two spaces
+    Rn_str = f"{Rn:>2}"  # Right-align with two character spaces
+    print(f"""{color}
             ,:::,
        ,,,:;  :  ;:,,,
    ,,,:       :       :,,,
@@ -46,27 +47,8 @@ def display_die(Rn, color):
 ; ;          ;';          ; ;
 ;  ;        ;   ;        ;  ;
 ;   ;      ;     ;      ;   ;
-;    ;    ;       ;    ;    ;
-;     ;  ;   {Rn}    ;  ;     ;
-;      ;:...........:;      ;
-;     , ;           ; ,     ;
-;   ,'   ;         ;   ',   ;
-'';'      ;       ;      ';''
-   ''';    ;     ;    ;'''
-       ''':;;   ;;:'''
-            ':::'
-        {reset_color}""")
-    else:
-        print(f"""{color}
-            ,:::,
-       ,,,:;  :  ;:,,,
-   ,,,:       :       :,,,
-,,;...........:...........;,,
-; ;          ;';          ; ;
-;  ;        ;   ;        ;  ;
-;   ;      ;     ;      ;   ;
-;    ;    ;       ;    ;    ;
-;     ;  ;    {Rn}    ;  ;     ;
+;    ;    ;  {Rn_str}   ;    ;    ;
+;     ;  ;         ;  ;     ;
 ;      ;:...........:;      ;
 ;     , ;           ; ,     ;
 ;   ,'   ;         ;   ',   ;
